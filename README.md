@@ -1,8 +1,8 @@
 # Volný projekt
 
-> **Jméno a příjmení:** `Doplňte`
+> **Jméno a příjmení:** `Jonáš Fiala`
 
-> **Název projektu:** `Doplňte`
+> **Název projektu:** `Trading Insight`
 
 ---
 
