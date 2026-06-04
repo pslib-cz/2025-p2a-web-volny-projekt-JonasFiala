@@ -4,20 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header class="header" id="header"></header>
+    <header id="header"></header>
     <main>
         <section class="hero">
             <h1 class="hero__heading">Test your strategy.<br>Before the market does.</h1>
             <p class="hero__description">Validate trading strategies against historical data with institutional-grade metrics that expose every weakness before real capital is at risk.</p>
-            <a href="#" class="button button-lignt">Get Started</a>
-            <a href="#" class="button button-dark">Learn More</a>
+            <a href="#" class="button button-light"><p class="button__text button__text-light">Get Started</p></a>
+            <a href="#" class="button button-dark"><p class="button__text button__text-dark">Learn More</p></a>
+        </section>
+        <section class="foundations">
+            <span class="text--tiny text--cyan">// FOUNDATIONS</span>
+            <h2 class="foundations__heading">What is backtesting</h2>
+            <p>Simulating a trading strategy against historical market data to evaluate how it would have performed — without risking a cent.</p>
+            <div class="i_cards">
+                <div class="i_card">
+                    <p class="i_card__small text--small">01 — concept</p>
+                    <p class="i_card__heading heading-h3">Replay the market</p>
+                    <p class="i_card__text text--small">Your strategy's rules are applied to historical price data tick-by-tick. Every signal, entry, exit, and position size is evaluated as it would have been executed in real trading.</p>
+                </div>
+                <div class="i_card">
+                    <p class="i_card__small text--small">02 — purpose</p>
+                    <p class="i_card__heading heading-h3">Validate before you alocate</p>
+                    <p class="i_card__text text--small">A strategy that looks brilliant in theory can collapse against real data. Backtesting exposes over-fitting, survivorship bias, and regime fragility before real capital is committed.</p>
+                </div>
+                <div class="i_card">
+                    <p class="i_card__small text--small">03 — limitations</p>
+                    <p class="i_card__heading heading-h3">Past ≠ future, but still matters</p>
+                    <p class="i_card__text text--small">Slippage, market impact, and structural regime changes mean past performance is conditional — not predictive. QuantFrame models realistic friction including bid-ask spreads and commission.</p>
+                </div>
+                <div class="i_card">
+                    <p class="i_card__small text--small">04 — iteration</p>
+                    <p class="i_card__heading heading-h3">Strategy is a loop, not a line</p>
+                    <p class="i_card__text text--small">Hypothesize, backtest, analyze, refine. Every run surfaces something to improve. Over dozens of iterations, edge sharpens and risk becomes legible.</p>
+                </div>
+            </div>
         </section>
     </main>
-    <footer class="footer" id="footer"></footer>
+    <footer id="footer"></footer>
     <script src="link_header_footer.js"></script>
 </body>
 </html>
