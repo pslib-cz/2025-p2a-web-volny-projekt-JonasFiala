@@ -3,6 +3,8 @@
     --lighter-bg: #0D1522;
     --light-gold: #9D957C;
     --gold: #9F853B;
+    --cyan: #007A74;
+    --light-cyan: #27C1CC;
     --text-font: "Space Mono", monospace;
     --heading-font: "Urbanist", sans-serif;
     --break-point-tab: 768px;
@@ -18,6 +20,10 @@
 
 h1, h2{
     color: #fff;
+    font-family: var(--heading-font);
+}
+h2, .heading-h3{
+    margin:0;
 }
 
 .heading-h3 {
@@ -34,6 +40,7 @@ h1, h2{
     font-style: normal;
     font-weight: 400;
     line-height: 0.75rem;
+    margin:0;
 }
 .text--small {
     font-size: 0.75rem;
@@ -42,7 +49,10 @@ h1, h2{
     line-height: 0.875rem;
 }
 .text--cyan {
-    color: #007A74;
+    color: var(--cyan);
+}
+.text--light-cyan {
+    color: var(--light-cyan)
 }
 
 p, span{
@@ -64,7 +74,7 @@ body {
 }
 
 main {
-    max-width: min(95%, 1200px);
+    max-width: min(95%, 1100px);
     margin: 0 auto;
 }
 
@@ -125,10 +135,6 @@ header {
     background-color: var(--gold);
 }
 
-.foundations__heading {
-    margin:0;
-}
-
 .i_cards { 
     display: grid;
     width: 100%;
@@ -147,8 +153,27 @@ header {
     margin: 0;
     margin-bottom: 0.25rem;
 }
-.i_card__heading {
-    margin: 0;
+
+
+.met_cards{
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.met_card{
+    background-color: var(--bg-color);
+    border: 1px solid transparent;
+    border-image: var(--gold-border-gradient) 1;
+    padding: 1rem;
+}
+.met_card__value{
+    font-family: var(--heading-font);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.875rem;     
+    margin: .5rem 0;
 }
 
 
@@ -173,4 +198,7 @@ footer a:hover{
 
 @media (min-width: 1200px) {
 
+.met_cards{
+    grid-template-columns: repeat(3, 1fr);
+}
 }
