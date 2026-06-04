@@ -35,9 +35,9 @@ _Shrnutí všech odkazů na jednom místě. Průběžně aktualizujte._
 
 | Výstup | Odkaz |
 |---|---|
-| GitHub Pages (live) | [`Doplň odkaz`](#) |
-| Grafický manuál (Figma / Canva) | [`Doplň odkaz`](#) |
-| Grafický návrh webu (Figma) | [`Doplň odkaz`](#) |
+| GitHub Pages (live) | [`https://pslib-cz.github.io/2025-p2a-web-volny-projekt-JonasFiala/`](#) |
+| Grafický manuál (Figma / Canva) | [`figma.com/design/sdqRw5yLIyh5FjTPS0g5bQ/FialaJonáš?m=dev`](#) |
+| Grafický návrh webu (Figma) | [`figma.com/design/sdqRw5yLIyh5FjTPS0g5bQ/FialaJonáš?m=dev`](#) |
 | Fotografie / média | [`Doplň odkaz`](#) |
 
 ---
