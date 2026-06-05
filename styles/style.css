@@ -11,9 +11,9 @@
     --break-point-pc: 1024px;
     --gold-border-gradient: linear-gradient(
         90deg,
-        rgb(from var(--gold) r g b / 0.5) 0%,
+        rgb(from var(--gold) r g b / 0.6) 0%,
         var(--gold) 50%,
-        rgb(from var(--gold) r g b / 0.5) 100%
+        rgb(from var(--gold) r g b / 0.6) 100%
     );
 
 }
@@ -102,13 +102,15 @@ header {
 .hero__description {
     max-width: 400px;
 }
+.hero__button {
+    margin-bottom: .5rem;
+}
 
 
 .button {
     display: block;
-    padding: 1rem 5.5rem;
+    padding: 1rem 2.5rem;
     text-decoration: none;
-    margin-bottom: .5rem;
 }
 .button__text{
     font-family: var(--text-font);
@@ -134,6 +136,7 @@ header {
 .button-light {
     background-color: var(--gold);
 }
+
 
 .i_cards { 
     display: grid;
@@ -177,6 +180,22 @@ header {
 }
 
 
+.ready_card {
+    background-color: var(--bg-color);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+    border-image: var(--gold-border-gradient) 1;
+}
+.ready_card__button {
+    margin: auto;
+    margin-right: 0;
+}
+
+
 footer {
     background-color: var(--bg-color);
     padding: 1.5rem;
@@ -193,6 +212,17 @@ footer a:hover{
 
 .i_cards{
     grid-template-columns: repeat(2, 1fr);
+}
+
+
+.ready_card{
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: start;
+}
+
+.hero__button{
+    display: inline-block;
 }
 }
 
