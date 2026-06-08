@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>backtest</title>
+    <title>Backtest Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header id="header"></header>
-    <main>
-        <h1>SMA 50/200 Crossover</h1>
-        <div></div>
-    </main>
-    <footer id="footer"></footer>
+
+<header id="header"></header>
+
+<main>
+    <section class="strat-header">
+        <div class="strat-meta">
+            <span class="text--tiny text--cyan">// Backtest Report</span>
+            <h1 class="strat-name">SMA 50 / 200 Crossover</h1>
+
+            <div class="strat-tags">
+                <span class="tag">SPY — S&P 500 ETF</span>
+                <span class="tag">Jan 2018 – Dec 2023</span>
+                <span class="tag">0.05% commission</span>
+            </div>
+        </div>
+
+        <div class="strat-actions">
+            <button id="btn-export">↓ Export CSV</button>
+            <button id="btn-export">↓ Export PDF</button>
+            <button id="btn-run">Run your own →</button>
+        </div>
+    </section>
+
+    <!-- SUMMARY METRICS -->
+    <section class="metrics-row">
+    </section>
+
+</main>
+
+<footer id="footer"></footer>
+
+<script src="link_header_footer.js"></script>
+
 </body>
 </html>
