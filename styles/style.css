@@ -5,6 +5,8 @@
     --gold: #9F853B;
     --cyan: #007A74;
     --light-cyan: #27C1CC;
+    --red: #C24E4E;
+    --green: #48CE8B;
     --text-font: "Space Mono", monospace;
     --heading-font: "Urbanist", sans-serif;
     --break-point-tab: 768px;
@@ -53,6 +55,12 @@ h2, .heading-h3{
 }
 .text--light-cyan {
     color: var(--light-cyan)
+}
+.text--green {
+    color: var(--green)
+}
+.text--red {
+    color: var(--red)
 }
 
 p, span{
@@ -208,8 +216,8 @@ footer a:hover{
     text-decoration: underline;
 }
 
-@media (min-width: 768px){
-
+@media (min-width: 768px)
+{
 .i_cards{
     grid-template-columns: repeat(2, 1fr);
 }
@@ -226,8 +234,8 @@ footer a:hover{
 }
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width: 1200px)
+{
 .met_cards{
     grid-template-columns: repeat(3, 1fr);
 }
