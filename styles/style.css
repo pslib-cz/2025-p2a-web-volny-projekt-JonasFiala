@@ -146,7 +146,7 @@ header {
 }
 
 
-.i_cards { 
+.i_cards {
     display: grid;
     width: 100%;
     gap: 1rem;
@@ -183,7 +183,7 @@ header {
     font-family: var(--heading-font);
     font-size: 1.75rem;
     font-weight: 700;
-    line-height: 1.875rem;     
+    line-height: 1.875rem;
     margin: .5rem 0;
 }
 
@@ -204,6 +204,17 @@ header {
 }
 
 
+.mcard {
+    background-color: var(--bg-color);
+}
+
+
+.graphs {
+    display: grid;
+    grid-template-columns: ;
+}
+
+
 footer {
     background-color: var(--bg-color);
     padding: 1.5rem;
@@ -216,8 +227,8 @@ footer a:hover{
     text-decoration: underline;
 }
 
-@media (min-width: 768px)
-{
+/*tab*/
+@media (min-width: 768px) {
 .i_cards{
     grid-template-columns: repeat(2, 1fr);
 }
@@ -234,8 +245,9 @@ footer a:hover{
 }
 }
 
-@media (min-width: 1200px)
-{
+
+/*pc*/
+@media (min-width: 1200px) {
 .met_cards{
     grid-template-columns: repeat(3, 1fr);
 }
