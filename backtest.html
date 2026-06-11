@@ -18,7 +18,7 @@
 <main>
     <section class="strat-header">
         <div class="strat-meta">
-            <span class="text--tiny text--cyan">// Backtest Report</span>
+            <span class="text--tiny text--cyan">// BACKTEST REPORT</span>
             <h1 id="strat-name"></h1>
             <div class="strat-tags">
                 <span id="init_capital"></span>
@@ -35,47 +35,87 @@
 
     <section id="metrics" class="metrics-row">
         <div id="metrics-carg" class="mcard">
-            <p class="mcard__heading heading--h3"></p>
+            <p class="mcard__heading heading-h3"></p>
             <p class="mcard-value"></p>
             <p class="mcard-sub"></p>
         </div>
         <div id="metrics-sharp" class="mcard">
-            <p class="mcard__heading heading--h3"></p>
+            <p class="mcard__heading heading-h3"></p>
             <p class="mcard-value"></p>
             <p class="mcard-sub"></p>
         </div>
         <div id="metrics-drawdown" class="mcard">
-            <p class="mcard__heading heading--h3"></p>
+            <p class="mcard__heading heading-h3"></p>
             <p class="mcard-value"></p>
             <p class="mcard-sub"></p>
         </div>
         <div id="metrics-wr" class="mcard">
-            <p class="mcard__heading heading--h3"></p>
+            <p class="mcard__heading heading-h3"></p>
             <p class="mcard-value"></p>
             <p class="mcard-sub"></p>
         </div>
     </section>
 
     <section class="graphs">
-        <canvas id="equity_canvas"></canvas>
-        <canvas id="drawdown_canvas"></canvas>
-        <canvas id="distribution_canvas"></canvas>
-        <canvas id="monthly_canvas"></canvas>
+        <div id="equity_chart" class="chart">
+            <span class="text--tiny text--cyan">// PORTFOLIO VALUE</span>
+            <div class="chart__header">
+                <p class="heading-h3">Equity Curve vs Benchmark</p>
+                <div class="chart__legend">
+                    <span class="legend__item legend__item--gold">Strategy</span>
+                    <span class="legend__item legend__item--dark">SPY Buy & Hold</span>
+                </div>
+            </div>
+            <canvas id="equity_canvas" class="chart__canvas"></canvas>
+        </div>
+        <div id="drawdown_chart" class="chart">
+            <span class="text--tiny text--cyan">// DRAWDOWN</span>
+            <div class="chart__header">
+                <p class="heading-h3">Underwater chart</p>
+                <!--<div class="chart__legend">
+                    <p class="legend__item legend__item--gold">Strategy</p>
+                    <p class="legend__item legend__item--dark">SPY Buy & Hold</p>
+                </div>-->
+            </div>
+            <canvas id="drawdown_canvas" class="chart__canvas"></canvas>
+        </div>
+        <div id="distribution_chart" class="chart">
+            <div class="chart__header">
+                <p class="heading-h3">Equity Curve vs Benchmark</p>
+                <!--<div class="chart__legend">
+                    <p class="legend__item legend__item--gold">Strategy</p>
+                    <p class="legend__item legend__item--dark">SPY Buy & Hold</p>
+                </div>-->
+            </div>
+            <canvas id="distribution_canvas" class="chart__canvas"></canvas>
+        </div>
+        <div id="monthly_chart" class="chart">
+            <div class="chart__header">
+                <p class="heading-h3">Equity Curve vs Benchmark</p>
+                <!--<div class="chart__legend">
+                    <p class="legend__item legend__item--gold">Strategy</p>
+                    <p class="legend__item legend__item--dark">SPY Buy & Hold</p>
+                </div>-->
+            </div>
+            <canvas id="monthly_canvas" class="chart__canvas"></canvas>
+        </div>
+
+
         <div class="stat-list">
-          <div class="stat-row"><span class="stat-key">Sortino Ratio</span><span class="stat-val neu">3.17</span></div>
-          <div class="stat-row"><span class="stat-key">Calmar Ratio</span><span class="stat-val neu">2.41</span></div>
-          <div class="stat-row"><span class="stat-key">Alpha (vs SPY)</span><span class="stat-val pos">+14.6%</span></div>
-          <div class="stat-row"><span class="stat-key">Beta</span><span class="stat-val">0.34</span></div>
-          <div class="stat-row"><span class="stat-key">Avg Win</span><span class="stat-val pos">+8.4%</span></div>
-          <div class="stat-row"><span class="stat-key">Avg Loss</span><span class="stat-val neg">−3.9%</span></div>
-          <div class="stat-row"><span class="stat-key">Reward / Risk</span><span class="stat-val">2.15</span></div>
-          <div class="stat-row"><span class="stat-key">Avg Hold Time</span><span class="stat-val">61 days</span></div>
-          <div class="stat-row"><span class="stat-key">Longest Win Streak</span><span class="stat-val pos">7</span></div>
-          <div class="stat-row"><span class="stat-key">Longest Loss Streak</span><span class="stat-val neg">3</span></div>
-          <div class="stat-row"><span class="stat-key">Total Trades</span><span class="stat-val">35</span></div>
-          <div class="stat-row"><span class="stat-key">Time in Market</span><span class="stat-val">64%</span></div>
-          <div class="stat-row"><span class="stat-key">Volatility (Ann.)</span><span class="stat-val">8.2%</span></div>
-          <div class="stat-row"><span class="stat-key">VaR 95%</span><span class="stat-val neg">−1.3%</span></div>
+          <div class="stat-row"><span class="stat-key">Sortino Ratio</span><span id="stat_sortino" class="stat-val neu">3.17</span></div>
+          <div class="stat-row"><span class="stat-key">Calmar Ratio</span><span id="stat_calmar" class="stat-val neu">2.41</span></div>
+          <div class="stat-row"><span class="stat-key">Alpha (vs SPY)</span><span id="stat_alpha" class="stat-val pos">+14.6%</span></div>
+          <div class="stat-row"><span class="stat-key">Beta</span><span id="stat_beta" class="stat-val">0.34</span></div>
+          <div class="stat-row"><span class="stat-key">Avg Win</span><span id="stat_avg_win" class="stat-val pos">+8.4%</span></div>
+          <div class="stat-row"><span class="stat-key">Avg Loss</span><span id="stat_avg_loss" class="stat-val neg">−3.9%</span></div>
+          <div class="stat-row"><span class="stat-key">Reward / Risk</span><span id="stat_reward_risk" class="stat-val">2.15</span></div>
+          <div class="stat-row"><span class="stat-key">Avg Hold Time</span><span id="stat_avg_hold_time" class="stat-val">61 days</span></div>
+          <div class="stat-row"><span class="stat-key">Longest Win Streak</span><span id="stat_longest_win_streak" class="stat-val pos">7</span></div>
+          <div class="stat-row"><span class="stat-key">Longest Loss Streak</span><span id="stat_longest_loss_streak" class="stat-val neg">3</span></div>
+          <div class="stat-row"><span class="stat-key">Total Trades</span><span id="stat_total_trades" class="stat-val">35</span></div>
+          <div class="stat-row"><span class="stat-key">Time in Market</span><span id="stat_time_in_market" class="stat-val">64%</span></div>
+          <div class="stat-row"><span class="stat-key">Volatility (Ann.)</span><span id="stat_volatility" class="stat-val">8.2%</span></div>
+          <div class="stat-row"><span class="stat-key">VaR 95%</span><span id="stat_var_95" class="stat-val neg">−1.3%</span></div>
         </div>
     </section>
 

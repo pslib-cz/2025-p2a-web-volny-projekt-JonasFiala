@@ -1,15 +1,15 @@
 import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs";
 
 const pyodide = await loadPyodide();
-await pyodide.loadPackage(["pandas", "yfinance"]);
+await pyodide.loadPackage(["pandas"]);
 
 const equity_csv = await fetch("/reduced_equity.csv").then(r => r.text());
-const spy_csv = await fetch("/spy.csv").then(r => r.text());
-const pyCode = await fetch("/scripts/graphs.py").then(r => r.text());
+const spy_csv = await fetch("/reduced_spy.csv").then(r => r.text());
+const pyCode = await fetch("/scripts/utils.py").then(r => r.text());
 
 await pyodide.runPythonAsync(pyCode)
 const compute = pyodide.globals.get("compute");
-const resultProxy = compute(equity_csv);
+const resultProxy = compute(equity_csv, spy_csv);
 const result = resultProxy.toJs();
 const time_arr = result[0];
 const equity_arr = result[1];
@@ -17,7 +17,7 @@ const drawdown_arr = result[2];
 const spy_arr = result[3];
 const spy_drawdown_arr = result[4];
 
-console.log(result, time_arr, equity_arr, drawdown_arr, spy_arr);
+// console.log(result, time_arr, equity_arr, drawdown_arr, spy_arr);
 
 function get_month_labels(time_arr) {
   return time_arr.map(t =>
@@ -32,10 +32,11 @@ const monthLabels = get_month_labels(time_arr);
 
 Chart.defaults.color = '#6a6558';
 Chart.defaults.font.family = "'Space Mono', monospace";
-Chart.defaults.font.size = 12;
+Chart.defaults.font.size = 14;
 
 const gridColor = 'rgba(201,168,76,0.07)';
 const tickColor = '#5a5448';
+const minDD = Math.min(...drawdown_arr, ...spy_drawdown_arr);
 
 new Chart(document.getElementById('equity_canvas'), {
   type: 'line',
@@ -75,7 +76,7 @@ new Chart(document.getElementById('equity_canvas'), {
         backgroundColor: 'rgba(8,11,16,0.95)',
         borderColor: 'rgba(201,168,76,0.2)',
         borderWidth: 1,
-        titleFont: { size: 10 },
+        titleFont: { size: 16 },
         callbacks: {
           label: ctx => ` ${ctx.dataset.label}: $${ctx.raw.toLocaleString()}`
         }
@@ -126,6 +127,7 @@ options: {
         backgroundColor: 'rgba(8,11,16,0.95)',
         borderColor: 'rgba(226,92,92,0.2)',
         borderWidth: 1,
+        titleFont: { size: 16 },
         callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw.toFixed(2)}%` }
     }
     },
@@ -134,7 +136,9 @@ options: {
     y: {
         grid: { color: gridColor },
         ticks: { color: tickColor, callback: v => v.toFixed(0) + '%' },
-        max: 2
+        min: minDD * 1.1,
+        max: Math.abs(minDD * 0.1)
+
     }
     }
 }

@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #0D121C;
+    --bg-color: #05080D;
     --lighter-bg: #0D1522;
     --light-gold: #9D957C;
     --gold: #9F853B;
@@ -13,9 +13,9 @@
     --break-point-pc: 1024px;
     --gold-border-gradient: linear-gradient(
         90deg,
-        rgb(from var(--gold) r g b / 0.6) 0%,
-        var(--gold) 50%,
-        rgb(from var(--gold) r g b / 0.6) 100%
+        rgb(from var(--gold) r g b / 0.2) 0%,
+        rgb(from var(--gold) r g b / 0.6) 50%,
+        rgb(from var(--gold) r g b / 0.2) 100%
     );
 
 }
@@ -82,7 +82,7 @@ body {
 }
 
 main {
-    max-width: min(95%, 1100px);
+    max-width: min(95%, 1200px);
     margin: 0 auto;
 }
 
@@ -92,7 +92,7 @@ section {
 
 
 header {
-    background-color: var(--bg-color);
+    background-color: var(--lighter-bg);
     padding: 1rem;
 }
 .header__logo {
@@ -156,7 +156,7 @@ header {
 .i_card {
     border: 1px solid transparent;
     border-image: var(--gold-border-gradient) 1;
-    background: var(--bg, #0D121C);
+    background: var(--bg-color);
     padding: 1rem 1.5rem;
 }
 .i_card__small {
@@ -211,9 +211,46 @@ header {
 
 .graphs {
     display: grid;
-    grid-template-columns: ;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
 }
 
+.chart {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border: 1px solid transparent;
+    border-image: var(--gold-border-gradient) 1;
+    margin: 2rem;
+}
+.chart__header {
+    display: flex;
+    justify-content: space-between;
+}
+.chart__canvas {
+    margin: 1.5rem;
+    width: 100%;
+}
+#equity_chart {
+    grid-column: span 2;
+}
+
+.legend__item {
+    margin:0 .5rem;
+}
+.legend__item::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.legend__item--gold::before {
+    background-color: var(--gold);
+}
+.legend__item--dark::before {
+    background-color: #2d4060;
+}
 
 footer {
     background-color: var(--bg-color);
