@@ -92,7 +92,7 @@ section {
 
 
 header {
-    background-color: var(--lighter-bg);
+    background-color: var(--bg-color);
     padding: 1rem;
 }
 .header__logo {
@@ -252,6 +252,12 @@ header {
     background-color: #2d4060;
 }
 
+.stat-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
 footer {
     background-color: var(--bg-color);
     padding: 1.5rem;
@@ -277,8 +283,15 @@ footer a:hover{
     text-align: start;
 }
 
+
 .hero__button{
     display: inline-block;
+}
+
+
+.stat-list {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 }
 
